@@ -7,16 +7,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/origem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="120dp"
             android:text="@string/concordia"
             android:textSize="20sp" />
 
@@ -25,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="190dp"
             android:text="@string/seara"
             android:textSize="20sp" />
 
@@ -33,7 +28,6 @@
             android:id="@+id/ponto1edt"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
             android:hint="Passageiros"
             android:layout_alignParentRight="@+id/ponto1"
             android:layout_marginLeft="200dp"
@@ -44,7 +38,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="260dp"
             android:text="@string/it"
             android:textSize="20sp" />
 
@@ -52,7 +45,6 @@
             android:id="@+id/ponto2edt"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="260dp"
             android:hint="Passageiros"
             android:layout_alignParentRight="@+id/ponto2"
             android:layout_marginLeft="200dp"
@@ -63,7 +55,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="330dp"
             android:text="@string/xavantina"
             android:textSize="20sp" />
 
@@ -71,7 +62,6 @@
             android:id="@+id/ponto3edt"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="330dp"
             android:hint="Passageiros"
             android:layout_alignParentRight="@+id/ponto3"
             android:layout_marginLeft="200dp"
@@ -82,7 +72,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="400dp"
             android:text="@string/arvoredo"
             android:textSize="20sp"
             android:layout_marginStart="20dp"/>
@@ -91,7 +80,6 @@
             android:id="@+id/ponto4edt"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
             android:hint="Passageiros"
             android:layout_alignParentRight="@+id/ponto4"
             android:layout_marginLeft="200dp"
@@ -102,7 +90,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="470dp"
             android:text="@string/chapeco"
             android:textSize="20sp" />
 
@@ -111,11 +98,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="540dp"
             android:text="Registrar Rota"
             android:textSize="20sp"
             android:onClick="telaMapa"/>
 
-    </RelativeLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
