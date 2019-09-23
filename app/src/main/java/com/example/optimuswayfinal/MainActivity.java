@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void telaMapa(View view) {
+        rota.clear();
 
         rota.add(concas);
 
