@@ -1,16 +1,22 @@
 package com.example.optimuswayfinal;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import org.osmdroid.util.GeoPoint;
 
 import java.util.ArrayList;
+
+import static android.os.Build.VERSION_CODES.M;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<GeoPoint> rota = new ArrayList<>();
 
+    private static final int PERMISSAO_REQUERIDA = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT >= M) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED ||
+                    ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                String[] permissoes = {Manifest.permission.INTERNET, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                requestPermissions(permissoes, PERMISSAO_REQUERIDA);
+            }
+        }
 
         se = findViewById(R.id.ponto1edt);
         it = findViewById(R.id.ponto2edt);
@@ -64,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
             Log.i(this.getLocalClassName(), "Adicionando arvoredo!");
         }
         rota.add(chape);
-
 
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra(MapActivity.WAYPOINTS_EXTRA, rota);

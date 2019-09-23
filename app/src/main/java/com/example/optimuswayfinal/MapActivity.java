@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.osmdroid.api.IMapController;
@@ -18,6 +17,7 @@ import org.osmdroid.util.BoundingBox;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.CustomZoomButtonsController;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
 
 import java.util.ArrayList;
@@ -25,6 +25,13 @@ import java.util.ArrayList;
 public class MapActivity extends AppCompatActivity {
 
     public static final String WAYPOINTS_EXTRA = "com.example.optimuswayfinal.WAYPOINTS_EXTRA";
+
+    private final GeoPoint concas = new GeoPoint(-27.2328968,-52.0276853);
+    private final GeoPoint seara = new GeoPoint(-27.153100, -52.310387);
+    private final GeoPoint itah = new GeoPoint(-27.276689, -52.339888);
+    private final GeoPoint xavantina = new GeoPoint(-27.070874, -52.344416);
+    private final GeoPoint arvore = new GeoPoint(-27.075903, -52.455530);
+    private final GeoPoint chape = new GeoPoint(-27.102082, -52.620079);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +55,7 @@ public class MapActivity extends AppCompatActivity {
 
         RoadManager roadManager = new OSRMRoadManager(this);
 
-        ArrayList<GeoPoint> waypoints = (ArrayList<GeoPoint>) intent.getSerializableExtra(WAYPOINTS_EXTRA);
+        final ArrayList<GeoPoint> waypoints = (ArrayList<GeoPoint>) intent.getSerializableExtra(WAYPOINTS_EXTRA);
         Log.i("MapActivity", "" + waypoints.size());
 
         RouterTask router = new RouterTask(this, new OnAsyncTaskResult<Road>() {
@@ -59,6 +66,18 @@ public class MapActivity extends AppCompatActivity {
                 Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
                 map.getOverlays().add(roadOverlay);
                 map.zoomToBoundingBox(BoundingBox.fromGeoPoints(road.getRouteLow()), true, 50, 22.0, 2000L);
+
+
+                for (GeoPoint waypoint : waypoints) {
+                    Marker marker = new Marker(map);
+                    marker.setPosition(waypoint);
+                    marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                    map.getOverlays().add(marker);
+                }
+
+
+
+
                 map.invalidate();
 
             }
@@ -72,4 +91,5 @@ public class MapActivity extends AppCompatActivity {
 
 
     }
+
 }

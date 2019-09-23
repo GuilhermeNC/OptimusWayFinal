@@ -36,7 +36,6 @@ public class RouterTask extends AsyncTask<Object, Void, Road> {
         return null;
     }
 
-
     @Override
     protected void onPostExecute(Road road) {
         if (mCallBack != null) {
