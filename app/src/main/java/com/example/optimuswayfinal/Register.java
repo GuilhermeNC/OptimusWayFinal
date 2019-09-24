@@ -1,5 +1,6 @@
 package com.example.optimuswayfinal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,5 +41,10 @@ public class Register extends AppCompatActivity {
         user.setSenha(senha.getText().toString());
         long id = dao.inserir(user);
         Toast.makeText(this, "Usuario cadastro com id: " + id, Toast.LENGTH_SHORT).show();
+    }
+
+    public void telaLogin (View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
