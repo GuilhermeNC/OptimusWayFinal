@@ -33,6 +33,8 @@ public class MapActivity extends AppCompatActivity {
     private final GeoPoint arvore = new GeoPoint(-27.075903, -52.455530);
     private final GeoPoint chape = new GeoPoint(-27.102082, -52.620079);
 
+    Integer contador = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

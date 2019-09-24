@@ -17,4 +17,8 @@
     <string name="entrar">Entrar</string>
     <string name="cadastre_se">Cadastre-se</string>
     <string name="optimus_way">Optimus Way</string>
+    <string name="Destino">Destino</string>
+    <string name="Passageiros">Passageiros</string>
+    <string name="origem">Origem</string>
+    <string name="registrar_rota">Registrar Rota</string>
 </resources>
