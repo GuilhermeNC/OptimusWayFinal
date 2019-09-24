@@ -27,6 +27,7 @@
         <EditText
             android:id="@+id/ponto1edt"
             android:layout_width="150dp"
+            android:inputType="number"
             android:layout_height="wrap_content"
             android:hint="Passageiros"
             android:layout_alignParentRight="@+id/ponto1"

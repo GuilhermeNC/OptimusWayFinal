@@ -75,11 +75,7 @@ public class MapActivity extends AppCompatActivity {
                     map.getOverlays().add(marker);
                 }
 
-
-
-
                 map.invalidate();
-
             }
 
             @Override
@@ -88,8 +84,6 @@ public class MapActivity extends AppCompatActivity {
             }
         });
         router.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, roadManager, waypoints);
-
-
     }
 
 }

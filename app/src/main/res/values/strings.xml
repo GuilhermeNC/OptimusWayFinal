@@ -6,4 +6,11 @@
     <string name="it">Itá</string>
     <string name="seara">Seara</string>
     <string name="concordia">Concórdia</string>
+    <string name="registrar">Registrar</string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="empresa">Empresa</string>
+    <string name="idade">Idade</string>
+    <string name="nome">Nome</string>
+    <string name="logo">logo</string>
 </resources>
